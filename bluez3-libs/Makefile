@@ -38,16 +38,16 @@ TARGET_CFLAGS += $(FPIC)
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/bluetooth
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/bluetooth/*.h $(1)/opt/include/bluetooth
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/bluetooth/*.h $(1)/opt/include/bluetooth
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libbluetooth.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libbluetooth.{a,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/bluez.pc $(1)/opt/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/bluez.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/bluez3-libs/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libbluetooth.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libbluetooth.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,bluez3-libs))

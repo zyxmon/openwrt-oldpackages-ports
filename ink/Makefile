@@ -27,7 +27,7 @@ endef
 
 define Package/ink/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/ink $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/ink $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,ink))

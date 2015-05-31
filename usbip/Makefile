@@ -4,8 +4,6 @@
 # This is free software, licensed under the GNU General Public License v2.
 # See /LICENSE for more information.
 #
-# Can't be upgraded, we've got too old kernel
-#
 
 include $(TOPDIR)/rules.mk
 
@@ -63,28 +61,28 @@ CFLAGS+="$(TARGET_CFLAGS) -I$(STAGING_DIR)/opt/include"
 define Package/usbip/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libusbip.so.* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libusbip.so.* \
 		$(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/share/usbip
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/share/usbip/usb.ids \
+		$(PKG_INSTALL_DIR)/Apps/opt/share/usbip/usb.ids \
 		$(1)/opt/share/usbip/
 endef
 
 define Package/usbip-client/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/bin/usbip \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/usbip \
 		$(1)/opt/bin/
 endef
 
 define Package/usbip-server/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/bin/usbipd \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/usbipd \
 		$(1)/opt/bin/
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/bin/bind_driver \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/bind_driver \
 		$(1)/opt/bin/usbip_bind_driver
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(CP) \

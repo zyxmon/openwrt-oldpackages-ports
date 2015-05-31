@@ -57,7 +57,7 @@ CONFIGURE_ARGS+= \
 	--disable-ruby \
 	--disable-java \
 	--disable-csharp \
-	--prefix=/opt
+	--prefix=/Apps/opt
 
 ifeq ($(SDK)$(CONFIG_CLEARSILVER_ENABLE_COMPRESSION),y)
 	CONFIGURE_ARGS+= \
@@ -92,7 +92,7 @@ MAKE_FLAGS+= \
 	OSTYPE=Linux
 
 define Build/InstallDev
-	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/* $(1)/
 endef
 
 define Package/clearsilver/install

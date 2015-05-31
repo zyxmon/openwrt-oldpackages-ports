@@ -52,9 +52,9 @@ endef
 
 define Package/dsniff/install	
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/* $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/* $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP)  $(PKG_INSTALL_DIR)/opt/lib/* $(1)/opt/lib/
+	$(CP)  $(PKG_INSTALL_DIR)/Apps/opt/lib/* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,dsniff))

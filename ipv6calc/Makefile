@@ -101,14 +101,14 @@ MAKE_FLAGS += \
 
 define Package/ipv6calc/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/ipv6calc $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/ipv6calc $(1)/opt/bin/
 endef
 
 Package/ipv6calc-mini/install = $(Package/ipv6calc/install)
 
 define Package/ipv6log/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/ipv6log* $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/ipv6log* $(1)/opt/bin/
 endef
 
 Package/ipv6log-mini/install = $(Package/ipv6log/install)

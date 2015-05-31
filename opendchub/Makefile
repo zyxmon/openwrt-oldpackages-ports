@@ -38,7 +38,7 @@ CONFIGURE_ARGS += \
 
 define Package/opendchub/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/opendchub $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/opendchub $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/var $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S61opendchub $(1)/opt/etc/init.d
 endef

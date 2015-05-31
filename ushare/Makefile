@@ -46,8 +46,8 @@ define Build/Configure
 		./configure \
 		--cross-compile \
 		--cross-prefix="$(TARGET_CROSS)" \
-		--prefix="/opt" \
-		--sysconfdir="/opt/etc" \
+		--prefix="/Apps/opt" \
+		--sysconfdir="/Apps/opt/etc" \
 		--enable-dlna \
 		--disable-nls \
 		--disable-debug \
@@ -62,9 +62,9 @@ endef
 
 define Package/ushare/install
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/ushare.conf $(1)/opt/etc/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/ushare.conf $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/ushare $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/ushare $(1)/opt/bin/
 	$(INSTALL_BIN) ./files/S99ushare $(1)/opt/etc/init.d
 endef
 

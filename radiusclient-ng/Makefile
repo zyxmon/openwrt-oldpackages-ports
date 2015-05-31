@@ -75,21 +75,21 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/radiusclient-ng.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/radiusclient-ng.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libradiusclient-ng.{a,so}* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libradiusclient-ng.{a,so}* $(1)/opt/lib/
 endef
 
 define Package/libradiusclient-ng/install
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/radiusclient-ng $(1)/opt/etc/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/radiusclient-ng $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libradiusclient-ng.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libradiusclient-ng.so.* $(1)/opt/lib/
 endef
 
 define Package/radiusclient-ng/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/rad{acct,iusclient,login,status} $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/rad{acct,iusclient,login,status} $(1)/opt/sbin/
 endef
 
 $(eval $(call BuildPackage,libradiusclient-ng))

@@ -61,12 +61,12 @@ endef
 
 define Package/bluez3-utils/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(CP) $(PKG_INSTALL_DIR)/opt/sbin/* $(1)/opt/sbin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/sbin/* $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/etc/bluetooth
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/bluetooth/hcid.conf $(1)/opt/etc/bluetooth/
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/bluetooth/rfcomm.conf $(1)/opt/etc/bluetooth/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/bluetooth/hcid.conf $(1)/opt/etc/bluetooth/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/bluetooth/rfcomm.conf $(1)/opt/etc/bluetooth/
 	$(INSTALL_DIR) $(1)/opt/etc/dbus-1/system.d/
 	$(INSTALL_DATA) ./files/bluetooth.dbus $(1)/opt/etc/dbus-1/system.d/bluetooth.conf
 endef

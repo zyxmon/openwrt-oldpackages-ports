@@ -38,7 +38,7 @@ MAKE_FLAGS += \
 
 define Package/sed/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/sed $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/sed $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,sed))

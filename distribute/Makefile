@@ -62,7 +62,7 @@ define Package/distribute/install
 	$(INSTALL_BIN) \
 	    $(PKG_INSTALL_DIR)/opt/bin/easy_install \
 	    $(1)/opt/bin/
-	$(SED) '1s/#\!.*/#\!\/opt\/bin\/python/' $(1)/opt/bin/easy_install
+	$(SED) '1s/#\!.*/#\!\/Apps\/opt\/bin\/python/' $(1)/opt/bin/easy_install
 endef
 
 $(eval $(call HostBuild))

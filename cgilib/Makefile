@@ -42,14 +42,14 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/cgi.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/cgi.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcgi.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcgi.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/cgilib/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcgi.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcgi.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,cgilib))

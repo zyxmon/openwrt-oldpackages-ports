@@ -47,18 +47,18 @@ MAKE_PATH := unix
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/*.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/*.h $(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libtcl*.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libtcl*.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/tcl/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/*.so $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/*.so $(1)/opt/lib
 
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,tcl))

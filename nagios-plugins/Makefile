@@ -46,10 +46,10 @@ CONFIGURE_ARGS += \
 
 define Package/nagios-plugins/install
 	$(INSTALL_DIR) $(1)/opt/libexec/nagios
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/* $(1)/opt/libexec/nagios/
-	$(SED) 's,$(STAGING_DIR_HOST)/bin/perl,/opt/bin/perl,g' \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/* $(1)/opt/libexec/nagios/
+	$(SED) 's,$(STAGING_DIR_HOST)/bin/perl,/Apps/opt/bin/perl,g' \
 	    $(1)/opt/libexec/nagios/check_{breeze,disk_smb,file_age,flexlm,ifoperstatus,ifstatus,ircd,mailq,rpc,wave}
-	$(SED) 's,/bin/bash,/opt/bin/bash,g' $(1)/opt/libexec/nagios/check_{log,oracle,sensors}
+	$(SED) 's,/bin/bash,/Apps/opt/bin/bash,g' $(1)/opt/libexec/nagios/check_{log,oracle,sensors}
 endef
 
 $(eval $(call BuildPackage,nagios-plugins))

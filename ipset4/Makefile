@@ -36,7 +36,7 @@ IPSET_MAKEOPTS:= -C $(PKG_BUILD_DIR) \
 	LDFLAGS="-rdynamic $(TARGET_LDFLAGS)" \
 	NO_EXTRA_WARN_FLAGS=yes \
 	KERNEL_DIR="$(LINUX_DIR)" \
-	PREFIX=/opt \
+	PREFIX=/Apps/opt \
 
 define Build/Compile
 	mkdir -p $(PKG_INSTALL_DIR)
@@ -46,9 +46,9 @@ endef
 
 define Package/ipset4/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/ipset $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/ipset $(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/ipset
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/ipset/libipset*.so $(1)/opt/lib/ipset/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/ipset/libipset*.so $(1)/opt/lib/ipset/
 endef
 
 $(eval $(call BuildPackage,ipset4))

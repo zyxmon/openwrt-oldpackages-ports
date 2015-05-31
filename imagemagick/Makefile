@@ -110,43 +110,43 @@ define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/magick
 	$(INSTALL_DIR) $(1)/opt/include/wand
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/include/* \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/* \
 		$(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib/
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/*.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/*.so* \
 		$(1)/opt/lib/
 
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig/
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/lib/pkgconfig/* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/* \
 		$(1)/opt/lib/pkgconfig/
 endef
 
 define Package/imagemagick/install
 	$(INSTALL_DIR) $(1)/opt/lib/
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/*.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/*.so* \
 		$(1)/opt/lib/
 endef
 
 define Package/imagemagick-tools/install
 	$(INSTALL_DIR) $(1)/opt/bin/
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/bin/mogrify \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/mogrify \
 		$(1)/opt/bin/
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/bin/convert \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/convert \
 		$(1)/opt/bin/
 endef
 
 define BuildPlugin
   define Package/imagemagick-$(1)/install
 	$(INSTALL_DIR) $$(1)/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders/$(1).so \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders/$(1).so \
 		$$(1)/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders/$(1).la \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders/$(1).la \
 		$$(1)/opt/lib/ImageMagick-$(PKG_VERSION)/modules-Q16/coders
   endef
 

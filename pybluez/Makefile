@@ -39,7 +39,7 @@ CONFIGURE_ARGS += \
 define Build/Compile
 	$(if $(Build/Compile/PyMod),,@echo Python packaging code not found.; false)
 	$(call Build/Compile/PyMod,., \
-		install --prefix="$(PKG_INSTALL_DIR)/opt", \
+		install --prefix="$(PKG_INSTALL_DIR)/Apps/opt", \
 	)
 endef
 

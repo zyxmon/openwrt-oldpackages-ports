@@ -48,12 +48,12 @@ endef
 define Package/pptpd/install
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/sbin/bcrelay \
-		$(PKG_INSTALL_DIR)/opt/sbin/pptpctrl \
-		$(PKG_INSTALL_DIR)/opt/sbin/pptpd \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/bcrelay \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/pptpctrl \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/pptpd \
 		$(1)/opt/sbin/
 	$(INSTALL_DIR) $(1)/opt/lib/pptpd
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pptpd/* $(1)/opt/lib/pptpd/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pptpd/* $(1)/opt/lib/pptpd/
 	$(INSTALL_DIR) $(1)/opt/etc
 	$(INSTALL_DATA) ./files/pptpd.conf $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d

@@ -54,14 +54,14 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/nids.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/nids.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libnids.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libnids.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/libnids/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libnids.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libnids.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libnids))

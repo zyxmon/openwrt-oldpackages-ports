@@ -107,17 +107,17 @@ endef
 
 define Package/subversion-libs/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libsvn_*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libsvn_*.so.* $(1)/opt/lib/
 endef
 
 define Package/subversion-client/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{svn,svnversion,svnsync} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{svn,svnversion,svnsync} $(1)/opt/bin/
 endef
 
 define Package/subversion-server/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/svn{look,admin,dumpfilter,serve} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/svn{look,admin,dumpfilter,serve} $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,subversion-libs))

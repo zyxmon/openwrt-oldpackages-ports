@@ -39,18 +39,18 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/tesseract $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/tesseract $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libtesseract.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libtesseract.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/tesseract/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/lib*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/lib*.so.* $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/share
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/* $(1)/opt/share/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/* $(1)/opt/share/
 endef
 
 $(eval $(call BuildPackage,tesseract))

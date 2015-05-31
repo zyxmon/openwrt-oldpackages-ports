@@ -45,18 +45,18 @@ endef
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/include/aalib.h \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/aalib.h \
 		$(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libaa.{a,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libaa.{a,so*} \
 		$(1)/opt/lib/
 endef
 
 define Package/libaa/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libaa.so.* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libaa.so.* \
 		$(1)/opt/lib/
 endef
 

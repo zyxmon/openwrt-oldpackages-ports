@@ -31,7 +31,7 @@ endef
 
 define Package/make/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/make $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/make $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,make))

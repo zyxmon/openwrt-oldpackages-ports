@@ -34,18 +34,16 @@ endef
 
 define Build/Compile
 	$(call Build/Compile/PyMod,, \
-		install --prefix=/opt --root=$(PKG_INSTALL_DIR) \
-	)
+		install --prefix="$(PKG_INSTALL_DIR)", \
+    )
 endef
 
 define Package/mercurial/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/hg $(1)/opt/bin
-	$(SED) 's!/usr/bin/env python!/opt/bin/python!' $(1)/opt/bin/hg
-	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
-	$(CP) \
-		$(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
-		$(1)$(PYTHON_PKG_DIR)
+	$(INSTALL_DIR) $(1)/opt/lib
+	$(CP) $(PKG_INSTALL_DIR)/bin $(1)/opt/
+	$(CP) $(PKG_INSTALL_DIR)/lib $(1)/opt/
+	$(SED) 's!/usr/bin/env python!/Apps/opt/bin/python!' $(1)/opt/bin/hg
 endef
 
 $(eval $(call BuildPackage,mercurial))

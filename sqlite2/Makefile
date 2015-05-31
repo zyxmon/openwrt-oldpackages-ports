@@ -80,21 +80,21 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/sqlite.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/sqlite.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libsqlite.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libsqlite.{a,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/sqlite.pc $(1)/opt/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/sqlite.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libsqlite2/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libsqlite.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libsqlite.so.* $(1)/opt/lib/
 endef
 
 define Package/sqlite2-cli/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/sqlite $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/sqlite $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,libsqlite2))

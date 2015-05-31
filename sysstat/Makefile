@@ -37,9 +37,9 @@ define Package/sysstat/conffiles
 endef
 
 CONFIGURE_VARS+= \
-	sa_lib_dir="/opt/lib/sysstat" \
-	sa_dir="/opt/var/log/sysstat" \
-	conf_dir="/opt/etc/sysstat" \
+	sa_lib_dir="/Apps/opt/lib/sysstat" \
+	sa_dir="/Apps/opt/var/log/sysstat" \
+	conf_dir="/Apps/opt/etc/sysstat" \
 
 CONFIGURE_ARGS+= \
 	--disable-documentation \
@@ -48,11 +48,11 @@ TARGET_CFLAGS += $(TARGET_LDFLAGS)
 
 define Package/sysstat/install
 	$(INSTALL_DIR) $(1)/opt/lib/sysstat
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/lib/sysstat/{sadc,sa1,sa2} $(1)/opt/lib/sysstat/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/lib/sysstat/{sadc,sa1,sa2} $(1)/opt/lib/sysstat/
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{sar,sadf,iostat,mpstat,pidstat} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{sar,sadf,iostat,mpstat,pidstat} $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc/sysstat
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/sysstat/sysstat.ioconf $(1)/opt/etc/sysstat/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/sysstat/sysstat.ioconf $(1)/opt/etc/sysstat/
 	$(INSTALL_CONF) ./files/config $(1)/opt/etc/sysstat/config
 	$(INSTALL_DIR) $(1)/opt/var/log/sysstat
 	$(INSTALL_DIR) $(1)/opt/etc/init.d

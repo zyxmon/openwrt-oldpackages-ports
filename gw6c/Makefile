@@ -34,16 +34,16 @@ define Build/Compile
 		EXTRA_CXXFLAGS="$(TARGET_CFLAGS)" \
 		EXTRA_LDFLAGS="$(TARGET_LDFLAGS)" \
 		platform=linux \
-		installdir=$(PKG_INSTALL_DIR)/opt \
+		installdir=$(PKG_INSTALL_DIR)/Apps/opt \
 		all install\
 	)
 endef
 
 define Package/gw6c/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/gw6c $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/gw6c $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/share/gw6c/template
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/template/linux.sh $(1)/opt/share/gw6c/template
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/template/linux.sh $(1)/opt/share/gw6c/template
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_DATA) ./files/gw6c.conf $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/var/log

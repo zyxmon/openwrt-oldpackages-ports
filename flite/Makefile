@@ -40,25 +40,25 @@ define Build/Configure
 		--enable-shared \
 		--with-audio="oss" \
 		--with-vox="cmu_us_kal16" \
-		--prefix="$(PKG_INSTALL_DIR)/opt" \
-		--exec-prefix="$(PKG_INSTALL_DIR)/opt" \
-		--bindir="$(PKG_INSTALL_DIR)/opt/bin" \
+		--prefix="$(PKG_INSTALL_DIR)/Apps/opt" \
+		--exec-prefix="$(PKG_INSTALL_DIR)/Apps/opt" \
+		--bindir="$(PKG_INSTALL_DIR)/Apps/opt/bin" \
 	)
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/flite
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/flite/{cst,flite}*.h $(1)/opt/include/flite/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/flite/{cst,flite}*.h $(1)/opt/include/flite/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libflite*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libflite*.so.* $(1)/opt/lib/
 endef
 
 define Package/flite/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/flite \
-		$(PKG_INSTALL_DIR)/opt/bin/flite_time $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/flite \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/flite_time $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libflite*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libflite*.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,flite))

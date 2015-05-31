@@ -54,14 +54,14 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include $(1)/opt/lib $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/qrencode.h $(1)/opt/include/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libqrencode.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/qrencode.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libqrencode.{a,so*} $(1)/opt/lib/
 	$(CP) $(PKG_BUILD_DIR)/libqrencode.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libqrencode/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libqrencode.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libqrencode.so* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libqrencode))

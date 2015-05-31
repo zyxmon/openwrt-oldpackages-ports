@@ -48,11 +48,11 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/loudmouth-1.0/loudmouth
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/loudmouth-1.0/loudmouth/*.h $(1)/opt/include/loudmouth-1.0/loudmouth
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/loudmouth-1.0/loudmouth/*.h $(1)/opt/include/loudmouth-1.0/loudmouth
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libloudmouth-1.{a,la,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libloudmouth-1.{a,la,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/loudmouth-1.0.pc $(1)/opt/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/loudmouth-1.0.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libloudmouth1/install

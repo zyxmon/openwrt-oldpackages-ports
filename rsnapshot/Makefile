@@ -66,10 +66,10 @@ CONFIGURE_VARS += ac_cv_path_PERL=/opt/bin/perl \
 
 define Package/rsnapshot/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME) $(1)/opt/bin/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/$(PKG_NAME)-diff $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME) $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/$(PKG_NAME)-diff $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/opt/etc/$(PKG_NAME).conf.default $(1)/opt/etc/$(PKG_NAME).conf
+	$(INSTALL_DATA) $(PKG_INSTALL_DIR)/Apps/opt/etc/$(PKG_NAME).conf.default $(1)/opt/etc/$(PKG_NAME).conf
 endef
 
 define Package/rsnapshot/conffiles

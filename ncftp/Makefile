@@ -54,13 +54,13 @@ endef
 
 define Package/ncftp/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/ncftp $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/ncftp $(1)/opt/bin/
 endef
 
 define Package/ncftp-utils/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/ncftp{batch,get,ls,put,spooler} \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/ncftp{batch,get,ls,put,spooler} \
 		$(1)/opt/bin/
 endef
 

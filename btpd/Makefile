@@ -44,7 +44,7 @@ CONFIGURE_ARGS += -C --with-evloop-method=poll
 
 define Package/btpd/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/bt{cli,info,pd} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/bt{cli,info,pd} $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S93btpd $(1)/opt/etc/init.d
 endef

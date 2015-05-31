@@ -71,7 +71,7 @@ CONFIGURE_VARS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1) $(2)/bin
-	$(CP) $(PKG_INSTALL_DIR)/* $(1)/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/* $(1)/
 	$(CP) $(PKG_BUILD_DIR)/.libs/*.a $(PKG_BUILD_DIR)/*/.libs/*.a $(1)/opt/lib
 	$(CP) $(PKG_BUILD_DIR)/glibconfig-sysdefs.h $(1)/opt/include/glib-1.2/
 	ln -sf $(STAGING_DIR)/opt/bin/glib-config $(2)/bin/
@@ -82,7 +82,7 @@ endef
 
 define Package/glib1/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libg{lib,module,thread}-1.2.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libg{lib,module,thread}-1.2.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,glib1))

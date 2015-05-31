@@ -37,16 +37,16 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/id3 $(1)/opt/include/
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/id3.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/id3 $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/id3.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libid3.{a,so} $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libid3-*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libid3.{a,so} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libid3-*.so.* $(1)/opt/lib/
 endef
 
 define Package/id3lib/install
 	$(INSTALL_DIR) $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libid3-*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libid3-*.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,id3lib))

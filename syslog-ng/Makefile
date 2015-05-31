@@ -53,7 +53,7 @@ endef
 
 define Package/syslog-ng/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/syslog-ng $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/syslog-ng $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S01syslog-ng $(1)/opt/etc/init.d
 endef

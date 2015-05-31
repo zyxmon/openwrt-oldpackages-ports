@@ -34,7 +34,7 @@ define Package/eggdrop/description
 endef
 
 CONFIGURE_ARGS+=\
-	--prefix="$(PKG_INSTALL_DIR)/opt/eggdrop" \
+	--prefix="$(PKG_INSTALL_DIR)/Apps/opt/eggdrop" \
 	--disable-tcl-threads \
 	--with-tcllib="$(STAGING_DIR)/opt/lib/libtcl8.5.so" \
 	--with-tclinc="$(STAGING_DIR)/opt/include/tcl.h"
@@ -46,12 +46,12 @@ endef
 
 define Build/Install
 	$(call Build/Install/Default)
-	rm -Rvf $(PKG_INSTALL_DIR)/opt/eggdrop/doc
+	rm -Rvf $(PKG_INSTALL_DIR)/Apps/opt/eggdrop/doc
 endef
 
 define Package/eggdrop/install
 	$(INSTALL_DIR) $(1)/opt/eggdrop
-	$(CP) $(PKG_INSTALL_DIR)/opt/eggdrop/* $(1)/opt/eggdrop
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/eggdrop/* $(1)/opt/eggdrop
 endef
 
 $(eval $(call BuildPackage,eggdrop))

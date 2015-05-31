@@ -118,16 +118,16 @@ endif
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/bin $(1)/opt/include $(1)/opt/lib
 	$(CP) -L $(PKG_BUILD_DIR)/wx-config $(1)/opt/bin/
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/wx-2.8 $(1)/opt/include/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libwx_base$(LIB_PFX){,_net,_xml}-*.so* $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/wx $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/wx-2.8 $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libwx_base$(LIB_PFX){,_net,_xml}-*.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/wx $(1)/opt/lib/
 	$(SED) 's,-I$$$${includedir}/wx-2.8,-I$(STAGING_DIR)/opt/include/wx-2.8,g' $(1)/opt/bin/wx-config
 	$(SED) 's,-I$$$${libdir}/wx/include,-I$(STAGING_DIR)/opt/lib/wx/include,g' $(1)/opt/bin/wx-config
 endef
 
 define Package/libwxbase/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libwx_base$(LIB_PFX){,_net,_xml}-*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libwx_base$(LIB_PFX){,_net,_xml}-*.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libwxbase))

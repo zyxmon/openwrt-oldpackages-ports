@@ -42,15 +42,15 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/ucl
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/ucl/ucl{,conf}.h $(1)/opt/include/ucl/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/ucl/ucl{,conf}.h $(1)/opt/include/ucl/
 
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libucl.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libucl.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/libucl/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libucl.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libucl.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libucl))

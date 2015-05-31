@@ -45,7 +45,7 @@ CONFIGURE_VARS += \
 CONFIGURE_ARGS += \
 	--enable-shared \
 	--enable-static \
-	--with-gpg="/opt/bin/gpg" \
+	--with-gpg="/Apps/opt/bin/gpg" \
 	--with-gpg-error-prefix="$(STAGING_DIR)/opt" \
 	--with-libassuan-prefix="$(STAGING_DIR)/opt" \
 	--without-g13 \
@@ -55,18 +55,18 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/gpgme.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/gpgme.h $(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libgpgme{,-pthread}.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libgpgme{,-pthread}.{a,so*} $(1)/opt/lib/
 	
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin
 endef
 
 define Package/libgpgme/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libgpgme{,-pthread}.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libgpgme{,-pthread}.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libgpgme))

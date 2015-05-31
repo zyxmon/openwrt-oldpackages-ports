@@ -103,15 +103,15 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/lib/rrdtool-1.2/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/rrd.h $(1)/opt/lib/rrdtool-1.2/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/rrd.h $(1)/opt/lib/rrdtool-1.2/include/
 	$(INSTALL_DIR) $(1)/opt/lib/rrdtool-1.2/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/librrd{,_th}.{a,so*} $(1)/opt/lib/rrdtool-1.2/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/librrd{,_th}.{a,so*} $(1)/opt/lib/rrdtool-1.2/lib/
 endef
 
 define Package/librrd/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/librrd.so.* $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/librrd_th.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/librrd.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/librrd_th.so.* $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/share/rrdtool/fonts
 	$(CP) $(PKG_BUILD_DIR)/src/DejaVuSansMono-Roman.ttf \
 		$(1)/opt/share/rrdtool/fonts/
@@ -119,13 +119,13 @@ endef
 
 define Package/rrdcgi/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rrdcgi $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/rrdcgi $(1)/opt/bin/
 endef
 
 define Package/rrdtool/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rrdtool $(1)/opt/bin/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/rrdupdate $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/rrdtool $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/rrdupdate $(1)/opt/bin/
 endef
 
 define PyPackage/python-rrd/install

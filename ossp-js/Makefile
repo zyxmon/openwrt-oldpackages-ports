@@ -80,7 +80,7 @@ endef
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/js-config \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/js-config \
 		$(2)/bin/
 	$(SED) \
 		's,^\(prefix\|exec_prefix\)=.*,\1=$(STAGING_DIR)/opt,g' \
@@ -88,31 +88,31 @@ define Build/InstallDev
 
 	$(INSTALL_DIR) $(1)/opt/include
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/include/js \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/js \
 		$(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libjs.{la,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libjs.{la,so*} \
 		$(1)/opt/lib/
 
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/lib/pkgconfig/js.pc \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/js.pc \
 		$(1)/opt/lib/pkgconfig/
 endef
 
 define Package/js/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/js \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/js \
 		$(1)/opt/bin/
 endef
 
 define Package/libjs/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libjs.so.* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libjs.so.* \
 		$(1)/opt/lib/
 endef
 

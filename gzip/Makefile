@@ -36,9 +36,9 @@ CONFIGURE_VARS += \
 	ac_cv_search_clock_gettime=no
 
 define Package/gzip/install
-	$(SED) 's,/bin/bash,/bin/sh,g' $(PKG_INSTALL_DIR)/opt/bin/{gunzip,zcat}
+	$(SED) 's,/bin/bash,/bin/sh,g' $(PKG_INSTALL_DIR)/Apps/opt/bin/{gunzip,zcat}
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{gunzip,gzip,zcat} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{gunzip,gzip,zcat} $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,gzip))

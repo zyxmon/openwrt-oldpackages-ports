@@ -32,14 +32,14 @@ TARGET_CFLAGS += $(FPIC)
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/leptonica $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/leptonica $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/liblept.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/liblept.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/libleptonica/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/liblept.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/liblept.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libleptonica))

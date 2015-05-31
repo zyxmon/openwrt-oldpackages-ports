@@ -42,7 +42,7 @@ MAKE_ARGS += CFLAGS="$(TARGET_CFLAGS)"
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/libol-config \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/libol-config \
 		$(2)/bin/
 	$(SED) \
 		's,^\(prefix\|exec_prefix\)=.*,\1=$(STAGING_DIR)/opt,g' \
@@ -50,19 +50,19 @@ define Build/InstallDev
 
 	$(INSTALL_DIR) $(1)/opt/include/libol
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/include/libol/*.h \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/libol/*.h \
 		$(1)/opt/include/libol/
 
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libol.{a,la,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libol.{a,la,so*} \
 		$(1)/opt/lib/
 endef
 
 define Package/libol/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libol.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libol.so* \
 		$(1)/opt/lib/
 endef
 

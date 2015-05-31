@@ -74,23 +74,23 @@ endef
 
 define Package/libslang2/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libslang.so* $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/slang/ $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libslang.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/slang/ $(1)/opt/lib/
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/*.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/*.h $(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libslang.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libslang.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/slsh/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/slsh $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/slsh $(1)/opt/bin
 	$(INSTALL_DIR) $(1)/opt/share
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/slsh/ $(1)/opt/share/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/slsh/ $(1)/opt/share/
 endef
 
 $(eval $(call BuildPackage,libslang2))

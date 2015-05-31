@@ -48,7 +48,7 @@ define Build/Configure
 		./configure \
 		--cross-compile \
 		--cross-prefix=$(TARGET_CROSS) \
-		--prefix=/opt \
+		--prefix=/Apps/opt \
 		--enable-shared \
 		--enable-static \
 		--disable-debug \
@@ -66,16 +66,16 @@ TARGET_CFLAGS += $(FPIC)
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/dlna.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/dlna.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libdlna.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libdlna.{a,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libdlna.pc $(1)/opt/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libdlna.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libdlna/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libdlna.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libdlna.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libdlna))

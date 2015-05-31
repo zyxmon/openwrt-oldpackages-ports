@@ -37,15 +37,15 @@ endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include $(1)/opt/lib $(1)/opt/lib/pkgconfig
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/libotr $(1)/opt/include/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libotr.{a,la,so*} $(1)/opt/lib/
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libotr.pc $(1)/opt/lib/pkgconfig/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/libotr $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libotr.{a,la,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libotr.pc $(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libotr/install
 	$(INSTALL_DIR) $(1)/opt/lib $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libotr.so.* $(1)/opt/lib/
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/* $(1)/opt/bin
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libotr.so.* $(1)/opt/lib/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/* $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,libotr))

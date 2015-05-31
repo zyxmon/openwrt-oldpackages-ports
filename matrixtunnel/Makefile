@@ -37,6 +37,8 @@ define Package/matrixtunnel/description
 	based on matrixssl library.
 endef
 
+TARGET_CFLAGS += -DLINUX
+
 define Build/Configure
 	$(call Build/Configure/Default, \
 		--without-libiconv-prefix \
@@ -47,7 +49,7 @@ endef
 
 define Package/matrixtunnel/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/matrixtunnel $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/matrixtunnel $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,matrixtunnel))

@@ -34,13 +34,13 @@ define Package/python2-chardet/description
 endef
 
 define Build/Compile
-	$(call Build/Compile/PyMod,,install --prefix="$(PKG_INSTALL_DIR)/opt")
+	$(call Build/Compile/PyMod,,install --prefix="$(PKG_INSTALL_DIR)/Apps/opt")
 endef
 
 define Package/python2-chardet/install
 	$(INSTALL_DIR) $(1)$(PYTHON_PKG_DIR)
 	$(CP) \
-	    $(PKG_INSTALL_DIR)$(PYTHON_PKG_DIR)/* \
+	    $(PKG_INSTALL_DIR)/Apps$(PYTHON_PKG_DIR)/* \
 	    $(1)$(PYTHON_PKG_DIR)
 endef
 

@@ -75,7 +75,7 @@ CONFIGURE_VARS += \
 
 define Package/fetchmail/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/fetchmail $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/fetchmail $(1)/opt/bin/
 endef
 
 Package/fetchmail-nossl/install = $(Package/fetchmail/install)

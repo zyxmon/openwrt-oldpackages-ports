@@ -181,12 +181,12 @@ endef
 
 define Package/isc-dhcp-relay-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/dhcrelay $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/dhcrelay $(1)/opt/sbin
 endef
 
 define Package/isc-dhcp-server-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/opt/sbin $(1)/opt/etc
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/dhcpd $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/dhcpd $(1)/opt/sbin
 	$(INSTALL_BIN) ./files/dhcpd.conf $(1)/opt/etc
 ifeq ($(BUILD_VARIANT),ipv6)
 	$(INSTALL_BIN) ./files/dhcpd6.conf $(1)/opt/etc
@@ -195,7 +195,7 @@ endef
 
 define Package/isc-dhcp-client-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/opt/sbin $(1)/opt/etc
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/dhclient $(1)/opt/sbin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/dhclient $(1)/opt/sbin
 	$(INSTALL_BIN) ./files/dhclient-script $(1)/opt/sbin/
 ifeq ($(BUILD_VARIANT),ipv6)
 	$(INSTALL_BIN) ./files/dhclient6.conf $(1)/opt/etc
@@ -204,7 +204,7 @@ endef
 
 define Package/isc-dhcp-omshell-$(BUILD_VARIANT)/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/omshell $(1)/opt/bin
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/omshell $(1)/opt/bin
 endef
 
 $(eval $(call BuildPackage,isc-dhcp-relay-ipv4))

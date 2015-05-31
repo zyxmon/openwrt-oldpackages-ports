@@ -39,19 +39,19 @@ MAKE_ARGS += LIBS="$(TARGET_LIBS)"
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/include/inklevel.h \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/inklevel.h \
 		$(1)/opt/include/
 
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libinklevel.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libinklevel.so* \
 		$(1)/opt/lib/
 endef
 
 define Package/libinklevel/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libinklevel.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libinklevel.so* \
 		$(1)/opt/lib/
 endef
 

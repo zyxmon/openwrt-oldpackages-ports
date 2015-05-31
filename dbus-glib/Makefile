@@ -51,23 +51,23 @@ CONFIGURE_VARS+= \
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/dbus-1.0/dbus
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/include/dbus-1.0/dbus/*.h \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/dbus-1.0/dbus/*.h \
 		$(1)/opt/include/dbus-1.0/dbus/
 
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libdbus-glib-1.{la,a,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libdbus-glib-1.{la,a,so*} \
 		$(1)/opt/lib/
 
 	$(INSTALL_DIR) $(1)/opt/lib/pkgconfig
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/lib/pkgconfig/dbus-glib-1.pc \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/dbus-glib-1.pc \
 		$(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libdbus-glib/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libdbus-glib-1.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libdbus-glib-1.so.* $(1)/opt/lib/
 endef
 
 

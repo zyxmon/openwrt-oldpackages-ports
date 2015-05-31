@@ -53,9 +53,9 @@ CONFIGURE_VARS += \
 
 define Package/ipcad/install
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/ipcad.conf $(1)/opt/etc/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/ipcad.conf $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/ipcad $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/ipcad $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,ipcad))

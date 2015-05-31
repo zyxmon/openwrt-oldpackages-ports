@@ -47,14 +47,14 @@ TARGET_CFLAGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/crypto++
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/crypto--/* $(1)/opt/include/crypto++/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/crypto--/* $(1)/opt/include/crypto++/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcrypto++.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcrypto++.{a,so*} $(1)/opt/lib/
 endef
 
 define Package/libcryptoxx/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcrypto++.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcrypto++.so* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libcryptoxx))

@@ -45,20 +45,20 @@ CONFIGURE_ARGS += \
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/assuan.h $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/assuan.h $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libassuan.{a,so*} $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libassuan.{a,so*} $(1)/opt/lib/
 	$(INSTALL_DIR) $(1)/opt/share/aclocal
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/aclocal/libassuan.m4 $(1)/opt/share/aclocal/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/aclocal/libassuan.m4 $(1)/opt/share/aclocal/
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(CP) $(PKG_INSTALL_DIR)/opt/bin/libassuan-config $(1)/opt/bin/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/bin/libassuan-config $(1)/opt/bin/
 	$(INSTALL_DIR) $(2)/bin
 	$(LN) -nsf ../../opt/bin/libassuan-config $(2)/bin/
 endef
 
 define Package/libassuan/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libassuan*.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libassuan*.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libassuan))

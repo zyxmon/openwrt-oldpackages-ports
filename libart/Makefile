@@ -47,28 +47,28 @@ TARGET_CFLAGS += $(FPIC)
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin $(1)/opt/include $(1)/opt/lib/pkgconfig
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/libart2-config \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/libart2-config \
 		$(2)/bin/
 	$(SED) \
 		's,^\(prefix\|exec_prefix\)=.*,\1=$(STAGING_DIR)/opt,g' \
 		$(2)/bin/libart2-config
 
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/include/libart-2.0 \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/libart-2.0 \
 			$(1)/opt/include/
 
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libart_lgpl_2.{la,a,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libart_lgpl_2.{la,a,so*} \
 		$(1)/opt/lib/
 
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/lib/pkgconfig/libart-2.0.pc \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/pkgconfig/libart-2.0.pc \
 		$(1)/opt/lib/pkgconfig/
 endef
 
 define Package/libart/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libart_lgpl_2.so.* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libart_lgpl_2.so.* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,libart))

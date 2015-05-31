@@ -39,19 +39,19 @@ CONFIGURE_ARGS += \
 define Build/InstallDev
 	$(INSTALL_DIR) $(1)/opt/include/libpar2
 	$(INSTALL_DATA) \
-		$(PKG_INSTALL_DIR)/opt/include/libpar2/*.h \
+		$(PKG_INSTALL_DIR)/Apps/opt/include/libpar2/*.h \
 		$(1)/opt/include/libpar2/
 
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libpar2.{la,so*} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libpar2.{la,so*} \
 		$(1)/opt/lib/
 endef
 
 define Package/libpar2/install
 	$(INSTALL_DIR) $(1)/opt/lib
 	$(CP) \
-		$(PKG_INSTALL_DIR)/opt/lib/libpar2.so* \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/libpar2.so* \
 		$(1)/opt/lib/
 endef
 

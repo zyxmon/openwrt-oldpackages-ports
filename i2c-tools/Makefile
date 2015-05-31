@@ -67,7 +67,7 @@ ifdef CONFIG_PACKAGE_python-smbus
   define Build/Compile/python-smbus
 	$(if $(Build/Compile/PyMod),,@echo Python packaging code not found.; false)
 	$(call Build/Compile/PyMod,./py-smbus/, \
-		install --prefix="$(PKG_INSTALL_DIR)/opt", \
+		install --prefix="$(PKG_INSTALL_DIR)/Apps/opt", \
 	)
   endef
 endif

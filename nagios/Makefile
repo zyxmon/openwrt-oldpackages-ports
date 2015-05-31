@@ -40,7 +40,7 @@ CONFIGURE_VARS += \
 CONFIGURE_ARGS += \
 	--with-nagios-user="root" \
 	--with-nagios-group="root" \
-	--sysconfdir="/opt/etc/nagios" \
+	--sysconfdir="/Apps/opt/etc/nagios" \
 	--without-gd-lib \
 	--without-gd-inc \
 	CFLAGS="$(TARGET_CFLAGS) $(EXTRA_CFLAGS)"
@@ -55,13 +55,13 @@ endef
 
 define Package/nagios/install
 	$(INSTALL_DIR)	$(1)/opt/etc/nagios
-	$(INSTALL_DATA)	$(PKG_INSTALL_DIR)/opt/etc/nagios/* $(1)/opt/etc/nagios/
+	$(INSTALL_DATA)	$(PKG_INSTALL_DIR)/Apps/opt/etc/nagios/* $(1)/opt/etc/nagios/
 	$(INSTALL_DIR)	$(1)/opt/bin
-	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/opt/bin/{nagios,nagiostats} $(1)/opt/bin/
+	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/Apps/opt/bin/{nagios,nagiostats} $(1)/opt/bin/
 	$(INSTALL_DIR)	$(1)/opt/sbin
-	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/opt/sbin/* $(1)/opt/sbin/
+	$(INSTALL_BIN)	$(PKG_INSTALL_DIR)/Apps/opt/sbin/* $(1)/opt/sbin/
 	$(INSTALL_DIR)	$(1)/opt/share
-	$(CP)	$(PKG_INSTALL_DIR)/opt/share/* $(1)/opt/share/
+	$(CP)	$(PKG_INSTALL_DIR)/Apps/opt/share/* $(1)/opt/share/
 endef
 
 define Package/nagios/conffiles

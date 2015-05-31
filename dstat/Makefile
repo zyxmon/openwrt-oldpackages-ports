@@ -39,7 +39,7 @@ endef
 define Package/dstat/install
 	$(INSTALL_DIR) $(1)/opt/share/dstat
 	$(INSTALL_BIN) $(PKG_BUILD_DIR)/dstat $(1)/opt/share/dstat/dstat.py
-	$(SED) 's!/usr/share/dstat/!/opt/share/dstat/!' $(1)/opt/share/dstat/dstat.py
+	$(SED) 's!/usr/share/dstat/!/Apps/opt/share/dstat/!' $(1)/opt/share/dstat/dstat.py
 	$(INSTALL_DATA) $(PKG_BUILD_DIR)/plugins/dstat_*.py $(1)/opt/share/dstat/
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(LN) -sf ../share/dstat/dstat.py $(1)/opt/bin/dstat

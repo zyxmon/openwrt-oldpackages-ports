@@ -427,31 +427,31 @@ endef
 define Package/cups/install
 	rm -rf $(1)/opt/etc/cups
 	$(INSTALL_DIR) $(1)/opt/etc/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/etc/cups/* $(1)/opt/etc/cups/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/etc/cups/* $(1)/opt/etc/cups/
 	rm -rf $(1)/opt/etc/cups/certs
 	ln -sf /opt/tmp $(1)/opt/etc/cups/certs
 	rm -f $(1)/opt/bin/cups-config
 	$(INSTALL_DIR) $(1)/opt/lib/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/backend $(1)/opt/lib/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/cgi-bin $(1)/opt/lib/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/daemon $(1)/opt/lib/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/driver $(1)/opt/lib/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/monitor $(1)/opt/lib/cups
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/backend $(1)/opt/lib/cups
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/cgi-bin $(1)/opt/lib/cups
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/daemon $(1)/opt/lib/cups
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/driver $(1)/opt/lib/cups
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/monitor $(1)/opt/lib/cups
 	$(INSTALL_DIR) $(1)/opt/lib/cups/filter
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/filter/{commandtops,pstops} \
-		$(PKG_INSTALL_DIR)/opt/lib/cups/filter/gziptoany \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/filter/{commandtops,pstops} \
+		$(PKG_INSTALL_DIR)/Apps/opt/lib/cups/filter/gziptoany \
 		$(1)/opt/lib/cups/filter
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/*.tmpl \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/*.tmpl \
 		$(1)/opt/share/cups/templates/
 	$(INSTALL_DIR) $(1)/opt/share/cups/mime
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/mime/* $(1)/opt/share/cups/mime/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/mime/* $(1)/opt/share/cups/mime/
 	$(INSTALL_DIR) $(1)/opt/share/doc/cups
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/doc/cups/index.html \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/doc/cups/index.html \
 		$(1)/opt/share/doc/cups/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/doc/cups/*.css \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/doc/cups/*.css \
 		$(1)/opt/share/doc/cups/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/doc/cups/images \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/doc/cups/images \
 		$(1)/opt/share/doc/cups/
 	$(INSTALL_DIR) $(1)/opt/sbin
 	# overwrite default config with our own
@@ -460,34 +460,34 @@ define Package/cups/install
 	$(INSTALL_DIR) $(1)/opt/etc/init.d
 	$(INSTALL_BIN) ./files/S60cupsd $(1)/opt/etc/init.d/
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/sbin/{cupsctl,cupsd} \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/{cupsctl,cupsd} \
 		$(1)/opt/sbin/
 endef
 
 define Package/cups-bsd/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/{lprm,lpq,lpr} $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/{lprm,lpq,lpr} $(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/sbin/lpc $(1)/opt/sbin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/sbin/lpc $(1)/opt/sbin/
 endef
 
 define Package/cups-client/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/{lp,cancel,cupstestppd,cupstestdsc} \
-		$(PKG_INSTALL_DIR)/opt/bin/{ipptool,lpoptions,lpstat,lppasswd} \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/{lp,cancel,cupstestppd,cupstestdsc} \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/{ipptool,lpoptions,lpstat,lppasswd} \
 		$(1)/opt/bin/
 	$(INSTALL_DIR) $(1)/opt/sbin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/sbin/{cupsaccept,cupsaddsmb,cupsfilter} \
-		$(PKG_INSTALL_DIR)/opt/sbin/{lpadmin,lpinfo,lpmove} \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/{cupsaccept,cupsaddsmb,cupsfilter} \
+		$(PKG_INSTALL_DIR)/Apps/opt/sbin/{lpadmin,lpinfo,lpmove} \
 		$(1)/opt/sbin/
 	(cd $(1)/opt/sbin; ln -sf cupsaccept accept; ln -sf cupsaccept cupsenable; ln -sf cupsaccept cupsdisable; ln -sf cupsaccept reject; ln -sf cupsaccept cupsreject;)
 endef
 
 define Package/cups-filters/install
 	$(INSTALL_DIR) $(1)/opt/lib/cups/filter
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/cups/filter/{bannertops,commandtoescpx,commandtopclx,imagetops,imagetoraster,rastertoepson,rastertopwg,rastertohp,rastertoescpx,rastertopclx,rastertolabel,texttops} \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/cups/filter/{bannertops,commandtoescpx,commandtopclx,imagetops,imagetoraster,rastertoepson,rastertopwg,rastertohp,rastertoescpx,rastertopclx,rastertolabel,texttops} \
 		$(1)/opt/lib/cups/filter
 	(cd $(1)/opt/lib/cups/filter; ln -sf rastertolabel rastertodymo;)
 endef
@@ -495,177 +495,177 @@ endef
 define Package/cups-ppdc/install
 	$(INSTALL_DIR) $(1)/opt/bin
 	$(INSTALL_BIN) \
-		$(PKG_INSTALL_DIR)/opt/bin/{ppdc,ppdhtml,ppdi,ppdmerge,ppdpo} \
+		$(PKG_INSTALL_DIR)/Apps/opt/bin/{ppdc,ppdhtml,ppdi,ppdmerge,ppdpo} \
 		$(1)/opt/bin/
 endef
 
 define Package/libcups/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcups.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcups.so* $(1)/opt/lib/
 endef
 
 define Package/libcupscgi/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcupscgi.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcupscgi.so* $(1)/opt/lib/
 endef
 
 define Package/libcupsdriver/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcupsdriver.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcupsdriver.so* $(1)/opt/lib/
 endef
 
 define Package/libcupsimage/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcupsimage.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcupsimage.so* $(1)/opt/lib/
 endef
 
 define Package/libcupsmime/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcupsmime.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcupsmime.so* $(1)/opt/lib/
 endef
 
 define Package/libcupsppdc/install
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcupsppdc.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcupsppdc.so* $(1)/opt/lib/
 endef
 
 define Package/cups-locale-de/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/de $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/de \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/de $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/de \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-nl/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/nl $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/nl $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-hu/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/hu $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/hu \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/hu $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/hu \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-pt/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/pt $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/pt $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-pt_BR/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/pt_BR $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/pt_BR $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-fi/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/fi $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/fi $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-sv/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/sv $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/sv $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-da/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/da $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/da $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-ko/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/ko $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/ko $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-zh/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/zh $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/zh $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-ja/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/ja $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/ja \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/ja $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/ja \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-es/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/es $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/es \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/es $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/es \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-zh_TW/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/zh_TW $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/zh_TW $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-pl/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/pl $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/pl \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/pl $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/pl \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-no/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/no $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/no $(1)/opt/share/locale/
 endef
 
 define Package/cups-locale-ru/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/ru $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/ru \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/ru $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/ru \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-eu/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/eu $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/eu \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/eu $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/eu \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-fr/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/fr $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/fr \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/fr $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/fr \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-it/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/it $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/it \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/it $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/it \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Package/cups-locale-id/install
 	$(INSTALL_DIR) $(1)/opt/share/locale
 	$(INSTALL_DIR) $(1)/opt/share/cups/templates
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/locale/id $(1)/opt/share/locale/
-	$(CP) $(PKG_INSTALL_DIR)/opt/share/cups/templates/id \
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/locale/id $(1)/opt/share/locale/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/share/cups/templates/id \
 		$(1)/opt/share/cups/templates/
 endef
 
 define Build/InstallDev
 	$(INSTALL_DIR) $(2)/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/cups-config $(2)/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/cups-config $(2)/bin/
 	$(INSTALL_DIR) $(1)/opt/include
-	$(CP) $(PKG_INSTALL_DIR)/opt/include/cups $(1)/opt/include/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/include/cups $(1)/opt/include/
 	$(INSTALL_DIR) $(1)/opt/lib
-	$(CP) $(PKG_INSTALL_DIR)/opt/lib/libcups*.so* $(1)/opt/lib/
+	$(CP) $(PKG_INSTALL_DIR)/Apps/opt/lib/libcups*.so* $(1)/opt/lib/
 endef
 
 $(eval $(call BuildPackage,cups))

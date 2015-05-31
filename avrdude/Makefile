@@ -53,9 +53,9 @@ endef
 
 define Package/avrdude/install
 	$(INSTALL_DIR) $(1)/opt/etc
-	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/opt/etc/avrdude.conf $(1)/opt/etc/
+	$(INSTALL_CONF) $(PKG_INSTALL_DIR)/Apps/opt/etc/avrdude.conf $(1)/opt/etc/
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/avrdude $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/avrdude $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,avrdude))

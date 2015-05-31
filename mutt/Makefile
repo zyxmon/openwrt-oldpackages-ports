@@ -42,7 +42,7 @@ CONFIGURE_ARGS += \
 
 define Package/mutt/install
 	$(INSTALL_DIR) $(1)/opt/bin
-	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/opt/bin/mutt $(1)/opt/bin/
+	$(INSTALL_BIN) $(PKG_INSTALL_DIR)/Apps/opt/bin/mutt $(1)/opt/bin/
 endef
 
 $(eval $(call BuildPackage,mutt))
